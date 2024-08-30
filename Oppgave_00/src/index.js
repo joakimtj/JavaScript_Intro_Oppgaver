@@ -69,7 +69,7 @@ const removeButton = document.querySelector('#remove-li');
 removeButton.addEventListener('click', () => {
     // Could also simply select the list itself (#list) and then do listItemToRemove.lastChild.remove
     // but when doing that, it requires two clicks to delete an item and I can't be bothered to debug it.
-    const listItemToRemove = document.querySelector('#list li');
+    const listItemToRemove = document.querySelector('#list li'); // Probably no real reason to have this in the scope of the event listener.
     if (listItemToRemove === null) {
         console.log('li returned null.')
         console.log('List likely empty.')
