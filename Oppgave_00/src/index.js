@@ -42,10 +42,38 @@ btnList.addEventListener('click', () => {
     ulPropogated = true;
 })
 // Oppgave 5
-let dropDown = document.querySelector('#select');
-let inputField5 = document.querySelector('#text');
-inputField5.addEventListener('input', (e) => {
-    return;
+// Lag lytterene og funksjonene som gjør at du kan lage et et HTML element (gjerne fra en nedtrekkslist med id #select) 
+// og tekst fra inputboksen med id #text. Bruk knappen med id #create. Legg teksten til elementet med id #placeholder
+let dropDown = document.querySelector('#select'); // #select
+/* Stupid but I'll keep it here for future reference.
+let dropDownSelection = 'h2';
+dropDown.addEventListener('change', () => {
+    console.log(dropDown.value);
+    dropDownSelection = dropDown.value;
+}) 
+*/ 
+// let textString = '';
+let textField = document.querySelector('#text'); // #text
+/* Same naive thing going on here as earlier lol
+textField.addEventListener('input', (e) => {
+    if (e.data === null) {
+        let strlen = textString.length;
+        textString = textString.slice(0, strlen-1);
+    } else {
+        let content = e.data;
+        textString += content;
+        console.log(textString);
+    }
+})
+*/
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+let textCreate = document.querySelector('#create') // #create
+textCreate.addEventListener('click', () => {
+    const placeholder = document.querySelector('#placeholder');
+    const createdElement = document.createElement(dropDown.value);
+    const elementContent = document.createTextNode(textField.value);
+    createdElement.appendChild(elementContent);
+    placeholder.appendChild(createdElement);
 })
 // Oppgave 6
 // Oppgave 7
