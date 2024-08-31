@@ -76,4 +76,29 @@ removeButton.addEventListener('click', () => {
     } else listItemToRemove.remove();
 })
 // Oppgave 7
+// Lytt til tastaturklikk på inputboks med id #name. 
+// Lag funksjonen som sjekker om ordet er maksimum 4 bokstaver langt. 
+// Hvis du krysser 4 bokstaver gjør knappen med id #order disablet eller gi knappen en rød border
+const inputName = document.querySelector('#name');
+inputName.addEventListener('input', () => {
+    let namelen = inputName.value.length;
+    if (namelen > 4) {
+        document.getElementById('order').disabled = true;
+    } else if (namelen < 4 && document.getElementById('order').disabled == true) {
+        document.getElementById('order').disabled = false;
+    }
+})
 // Oppgave 8
+// Hent ut alle barna av ul med klasse .children. 
+// Gi oddetall-barna grønn border mens partall skal ha pink. 
+// Bruk knappen med id #color for å gjøre endringen.
+let unorderedList = document.querySelectorAll('.children li');
+console.log(unorderedList);
+const colorButton = document.querySelector('#color');
+colorButton.addEventListener('click', () => {
+    for (let i = 0; i < unorderedList.length; i++) {
+        if (i % 2 == 0)
+            unorderedList[i].style.border = '2px solid pink';
+        else unorderedList[i].style.border = '2px solid green';
+    }
+})
