@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "ingen_hjelp": "echo \"Error\" $$ exit 1",
+        "util": "echo \"Error\" $$ exit 1"
+    },
+    "type": "module"
+}
